@@ -1,3 +1,5 @@
+elasticsearch/data
+
 HELP.md
 .gradle
 build/
