@@ -1,15 +1,19 @@
 package co.ukwksk.spring_kotlin.entity.sandbox
 
-import java.util.*
+import co.ukwksk.spring_kotlin.elasticsearch.sandbox.MessageSchema
 
 data class SandboxMessage private constructor(
-    val id: SandboxMessageId,
+    val id: SandboxMessageId? = null,
     val message: String,
 ) {
-    companion object SandboxMessage {
+    companion object {
         fun new(message: String) = SandboxMessage(
-            SandboxMessageId(UUID.randomUUID()),
-            message,
+            message = message,
+        )
+
+        fun fromSchema(schema: MessageSchema) = SandboxMessage(
+            id = SandboxMessageId(schema.id),
+            message = schema.message
         )
     }
 }
