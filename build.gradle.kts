@@ -15,6 +15,7 @@ repositories {
     mavenCentral()
     maven { url = uri("https://repo.spring.io/milestone") }
     maven { url = uri("https://repo.spring.io/snapshot") }
+    maven { url = uri("http://dl.bintray.com/mbuhot/maven") }
 }
 
 dependencies {
@@ -22,6 +23,10 @@ dependencies {
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
     implementation("org.jetbrains.kotlin:kotlin-reflect")
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
+
+    implementation("mbuhot:eskotlin:0.7.0")
+    implementation("org.elasticsearch.client:elasticsearch-rest-high-level-client:7.12.0")
+
     developmentOnly("org.springframework.boot:spring-boot-devtools")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
 }
