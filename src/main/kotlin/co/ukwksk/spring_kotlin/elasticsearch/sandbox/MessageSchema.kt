@@ -2,9 +2,12 @@ package co.ukwksk.spring_kotlin.elasticsearch.sandbox
 
 import co.ukwksk.spring_kotlin.entity.sandbox.SandboxMessage
 import co.ukwksk.spring_kotlin.entity.sandbox.SandboxMessageId
+import org.springframework.data.annotation.Id
+import org.springframework.data.elasticsearch.annotations.Document
 
+@Document(indexName = "sandbox-message-index")
 data class MessageSchema(
-    val id: String,
+    @Id val id: String,
     val message: String,
 ) {
     companion object {
