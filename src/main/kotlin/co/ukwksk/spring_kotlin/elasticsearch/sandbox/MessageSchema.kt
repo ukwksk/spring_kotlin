@@ -13,4 +13,9 @@ data class MessageSchema(
             message = message.message,
         )
     }
+
+    fun asMap(): Map<String, Any?> = mapOf(
+        "id" to id,
+        "message" to message,
+    )
 }
